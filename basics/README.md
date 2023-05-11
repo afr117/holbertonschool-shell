@@ -1,3 +1,3 @@
-#!/bin/bash ./0-currentworkingdirectory/0x00-shellbasics
+#!/bin/bash 
 Why... this is a script
 ~                        
