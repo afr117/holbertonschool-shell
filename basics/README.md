@@ -1,3 +1,2 @@
 #!/bin/bash 
-Why... this is a script
-~                        
+Why...this is a script              
