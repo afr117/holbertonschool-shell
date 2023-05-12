@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -la $(echo ~+)/.. /boot 
+ls -la | cat /dev/stdin | cd .. | cat /dev/stdin | ls -la | cat /dev/stdin | cd /boot | cat /dev/stdin | ls -la | cat /dev/stdin 
