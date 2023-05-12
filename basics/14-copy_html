@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -maxdepth 1 -name '*.html' -type f -newer ../ -exec cp -n {} .. \| xargs ls -l {} \| awk '{print $1,$3,$4,$5,$9}'
+find . -maxdepth 1 -name '*.html' -type f -newer ../ -exec sh -c 'cp -n "$@" ../' sh {} +
