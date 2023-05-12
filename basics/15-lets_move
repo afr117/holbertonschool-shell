@@ -1,2 +1,2 @@
 #!/bin/bash
-mv A*.html /tmp/u. 
+mv A* /tmp/u. 
