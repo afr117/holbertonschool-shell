@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lRa | awk '{if(NR>2)print}' | awk '{gsub(/[^[:alnum:][:space:]\/\._-]/,"")}1' | awk 'BEGIN{printf "%-40s %-15s %-15s %s\n", "Name", "Owner", "Group", "Size"}{printf "%-40s %-15s %-15s %s\n", $9, $3, $4, $5}' 
+ls -al ~/.. ~/boot / | grep -v "^d" 
