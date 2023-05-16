@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lt | while read -r perms links owner group size month day time name; do if [[ $name != "total" ]] then echo "$name" fi done
+ls -lt | while read -r perms links owner group size month day time name | do if [[ $name != "total" ]] then echo "$name" fi done
