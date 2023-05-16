@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lt | tail -n +1
+ls -lt | grep -v '^total' | sed 's/.* //'
