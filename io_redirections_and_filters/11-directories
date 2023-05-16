@@ -1,2 +1,3 @@
 #!/bin/bash
-find . -type f -print | wc -l
+count=$(find . -type f -name "*.js" -delete -print | wc -l)
+echo "$count"
