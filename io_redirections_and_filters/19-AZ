@@ -1,1 +1,2 @@
 #!/bin/bash
+Replaze all zharacters `Z` and `e` from input to `Z` and `e`.
