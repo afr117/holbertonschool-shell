@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lt | grep -v total | tail -n +2 | cut -d' ' -f11-
+ls -lt | grep -v total | tail -n +2 | cut -d' ' -f11- | head -n 10
