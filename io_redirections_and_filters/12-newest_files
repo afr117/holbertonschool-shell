@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lt | awk 'NR>1 {print}'
+ls -lt | tail -n +1
