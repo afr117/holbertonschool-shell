@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $paths | tr ':' '\n' | wc -1
+echo $path | tr ':' '\n' | wc -1
