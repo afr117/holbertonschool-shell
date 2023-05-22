@@ -1,55 +1,26 @@
-#!/usr/bin/env bash
+Script displays Usage: manage_my_process {start|stop|restart} when nothing is passed or something different than start, stop or restart
 
-# Function to start the manage_my_process script
-start() {
-    # Check if the process is already running
-    if [[ -f /var/run/my_process.pid ]]; then
-        echo "manage_my_process is already running."
-    else
-        # Start manage_my_process in the background
-        ./manage_my_process &
-        PID=$!
-        echo $PID > /var/run/my_process.pid
-        echo "manage_my_process started"
-    fi
-}
+ - [Got]
+Usage: ./11-manage_my_process {start|stop|restart}
 
-# Function to stop the manage_my_process script
-stop() {
-    # Check if the process is running and stop it
-    if [[ -f /var/run/my_process.pid ]]; then
-        PID=$(cat /var/run/my_process.pid)
-        kill "$PID"
-        rm /var/run/my_process.pid
-        echo "manage_my_process stopped"
-    else
-        echo "manage_my_process is not running."
-    fi
-}
+(51 chars long)
+[stderr]: 
+(0 chars long)
+[Expected]
+Usage: manage_my_process {start|stop|restart}
 
-# Function to restart the manage_my_process script
-restart() {
-    # Stop manage_my_process if it's running
-    stop
-    # Start manage_my_process
-    start
-}
+(46 chars long)
+[stderr]: [Anything]
+(0 chars long)
+ - [Got]
+Usage: ./11-manage_my_process {start|stop|restart}
 
-# Check the argument provided and perform the corresponding action
-case "$1" in
-    start)
-        start
-        ;;
-    stop)
-        stop
-        ;;
-    restart)
-        restart
-        echo "manage_my_process restarted"
-        ;;
-    *)
-        echo "Usage: $0 {start|stop|restart}"
-        exit 1
-        ;;
-esac
+(51 chars long)
+[stderr]: 
+(0 chars long)
+[Expected]
+Usage: manage_your_process {start|stop|restart}
 
+(48 chars long)
+[stderr]: [Anything]
+(0 chars long)
