@@ -1,10 +1,20 @@
-#!/usr/bin/env bash
+#!/usr/bin/env
+# Init script to manage manage_my_process
 
-# Indefinitely writes "I am alive!" to the file /tmp/my_process
-# Pauses for 2 seconds between each message
+# Function to start the manage_my_process script
+start() {
+    # Check if the process is already running
+    if [[ -f /var/run/my_process.pid ]]; then
+        echo "manage_my_process is already running."
+    else
+        # Start manage_my_process in the background
+        ./manage_my_process &
+        PID=$!
+        echo $PID > /var/run/my_process.pid
+        echo ""
+    fi
+}
 
-while true; do
-    echo "I am alive!"
-    sleep 2
-done
+# Rest of the code...
+
 
