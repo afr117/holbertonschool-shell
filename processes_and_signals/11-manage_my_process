@@ -31,13 +31,6 @@ stop() {
     fi
 }
 
-# Function to restart the manage_my_process script
-restart() {
-    stop
-    start
-    echo "manage_my_process restarted"
-}
-
 # Check the command-line argument
 case "$1" in
     start)
@@ -47,7 +40,9 @@ case "$1" in
         stop
         ;;
     restart)
-        restart
+        stop
+        start
+        echo "manage_my_process restarted"
         ;;
     *)
         echo "Usage: manage_my_process {start|stop|restart}"
