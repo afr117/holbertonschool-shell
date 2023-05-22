@@ -33,7 +33,6 @@ restart() {
     stop
     # Start manage_my_process
     start
-    echo "manage_my_process restarted"
 }
 
 # Check the argument provided and perform the corresponding action
@@ -46,6 +45,7 @@ case "$1" in
         ;;
     restart)
         restart
+        echo "manage_my_process restarted"
         ;;
     *)
         echo "Usage: $0 {start|stop|restart}"
