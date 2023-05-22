@@ -1,26 +1,10 @@
-Script displays Usage: manage_my_process {start|stop|restart} when nothing is passed or something different than start, stop or restart
+#!/usr/bin/env bash
 
- - [Got]
-Usage: ./11-manage_my_process {start|stop|restart}
+# Indefinitely writes "I am alive!" to the file /tmp/my_process
+# Pauses for 2 seconds between each message
 
-(51 chars long)
-[stderr]: 
-(0 chars long)
-[Expected]
-Usage: manage_my_process {start|stop|restart}
+while true; do
+    echo "I am alive!"
+    sleep 2
+done
 
-(46 chars long)
-[stderr]: [Anything]
-(0 chars long)
- - [Got]
-Usage: ./11-manage_my_process {start|stop|restart}
-
-(51 chars long)
-[stderr]: 
-(0 chars long)
-[Expected]
-Usage: manage_your_process {start|stop|restart}
-
-(48 chars long)
-[stderr]: [Anything]
-(0 chars long)
