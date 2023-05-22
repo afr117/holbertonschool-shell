@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+# Init script to manage manage_my_process
+
+# Function to start the manage_my_process script
+start() {
+    # Check if the process is already running
+    if [[ -f /var/run/my_process.pid ]]; then
+        echo "manage_my_process is already running."
+    else
+        # Start manage_my_process in the background
+        ./manage_my_process &
+        PID=$!
+        echo $PID > /var/run/my_process.pid
+        echo "manage_my_process started"
+    fi
+}
+
+# Function to stop the manage_my_process script
+stop() {
+    # Check if the process is running and stop it
+    if [[ -f /var/run/my_process.pid ]]; then
+        PID=$(cat /var/run/my_process.pid)
+        kill $PID
+        rm /var/run/my_process.pid
+        echo "manage_my_process stopped"
+    else
+        echo "manage_my_process is not running."
+    fi
+}
+
+# Function to restart the manage_my_process script
+restart() {
+    # Stop manage_my_process if it's running
+    stop
+    # Start manage_my_process
+    start
+    echo "manage_my_process restarted"
+}
+
+# Check the argument provided and perform the corresponding action
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+        restart
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+        ;;
+esac
+
