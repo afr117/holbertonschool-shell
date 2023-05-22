@@ -42,10 +42,14 @@ case "$1" in
     restart)
         stop
         start
-        echo "manage_my_process restarted"
         ;;
     *)
         echo "Usage: manage_my_process {start|stop|restart}"
         ;;
 esac
+
+# Check if restart argument was passed and print the message
+if [[ "$1" == "restart" ]]; then
+    echo "manage_my_process restarted"
+fi
 
