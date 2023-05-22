@@ -38,7 +38,7 @@ restart() {
     echo "manage_my_process restarted"
 }
 
-# Main script logic
+# Check the command-line argument
 case "$1" in
     start)
         start
@@ -50,7 +50,7 @@ case "$1" in
         restart
         ;;
     *)
-        echo "Usage: manage_my_process {start|stop|restart}"
+        echo "Usage: $0 {start|stop|restart}"
         ;;
 esac
 
