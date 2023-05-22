@@ -15,7 +15,6 @@ start() {
     fi
 }
 
-
 # Function to stop the manage_my_process script
 stop() {
     # Check if the process is running
