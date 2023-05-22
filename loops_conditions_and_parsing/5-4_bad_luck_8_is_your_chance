@@ -12,6 +12,9 @@ do
   if [ $count -eq 9 ]
   then
     echo "Hi"
+  elif [ $count -eq 7 ]
+  then 
+    echo "good luck"
   else
     echo "Best School"
   fi
