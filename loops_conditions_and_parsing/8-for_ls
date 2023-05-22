@@ -1,1 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#bash script displaying:
+
+#The content of the current working directory
+#In a list format
+#Where only part of the name after the first dash is displayed
+
+list=$(ls)
+for i in $list; do
+  echo "$i" | cut -d '-' -f2
+done
