@@ -1,10 +1,4 @@
 #!/bin/bash
-while true; do
-    echo "I am alive!" >> /tmp/my_process
-    sleep 2
-done
-And here’s the 11-manage_my_process script that manages the manage_my_process script:
-#!/bin/bash
 
 PID_FILE=/var/run/my_process.pid
 
