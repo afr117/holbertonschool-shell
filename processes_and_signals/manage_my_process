@@ -1,20 +1,5 @@
-#!/usr/bin/env
-# Init script to manage manage_my_process
-
-# Function to start the manage_my_process script
-start() {
-    # Check if the process is already running
-    if [[ -f /var/run/my_process.pid ]]; then
-        echo "manage_my_process is already running."
-    else
-        # Start manage_my_process in the background
-        ./manage_my_process &
-        PID=$!
-        echo $PID > /var/run/my_process.pid
-        echo ""
-    fi
-}
-
-# Rest of the code...
-
-
+#!/bin/bash
+while true; do
+    echo "I am alive!" >> /tmp/my_process
+    sleep 2
+done
