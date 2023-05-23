@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 #Displays the contents of the file '/etc/passwd'.
-#Only displays the username, user ID, and user home directory path for the user.
+#Only displays the username, user ID, and user home directory path for the user
 
-while IFS= read -r passwd; do
-  echo "$passwd" | cut -d ':' -f1,3,6
-done < "/etc/passwd"
+awk '{a[$1" "$9]++} END {for (i in a) print a[i], i}' apache-access.log | sort -rn
