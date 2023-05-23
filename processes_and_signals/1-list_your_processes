@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #Display current process
 
-ps -e 
+ps -e --forest -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command 
