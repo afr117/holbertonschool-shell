@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Ignore shellcheck error for the command substitution
+# shellcheck disable=SC2009
+
+# Display lines containing the word "bash" and extract the PID
+
+ps auxf | grep bash | grep -v grep | awk '{print $2}'
