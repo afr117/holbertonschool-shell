@@ -1,27 +1,31 @@
-#!/usr/bin/env bash
-# Init script to manage manage_my_process
+#!/bin/bash
+while true; do
+    echo "I am alive!" >> /tmp/my_process
+    sleep 2
+done
+And here’s the 11-manage_my_process script that manages the manage_my_process script:
+#!/bin/bash
 
-# Function to start the manage_my_process script
+PID_FILE=/var/run/my_process.pid
 
 case "$1" in
-        start)
-                sudo ./manage_my_process start &
-                echo "pidof pidof" > /var/run/my_process.pid
-                echo "manage_my_process started"
-                ;;
-        stop)
-                sudo pkill -f manage_my_process -15 &
-                rm "/var/run/my_process.pid"
-                echo "manage_my_process stopped"
-                ;;
-        restart)
-                sudo kill -f manage_my_process -15 &
-                echo "pidof pidof" > /var/run/my_process.pid
-                echo "manage_my_process restarted"
-                ;;
-        *)
-                echo "Usage: manage_my_process {start|stop|restart}"
-                echo "sudo/usr/bin/env"
-                ;;
+    start)
+        ./manage_my_process &
+        echo $! > $PID_FILE
+        echo "manage_my_process started"
+        ;;
+    stop)
+        kill "$(cat $PID_FILE)"
+        rm $PID_FILE
+        echo "manage_my_process stopped"
+        ;;
+    restart)
+        kill "$(cat $PID_FILE)"
+        rm $PID_FILE
+        ./manage_my_process &
+        echo $! > $PID_FILE
+        echo "manage_my_process restarted"
+        ;;
+    *)
+        echo "Usage: manage_my_process {start|stop|restart}"
 esac
-
