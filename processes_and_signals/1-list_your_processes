@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #Display current process
 
-pstree
+ps command
