@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #Display current process
 
-ps -e --forest -o user,start,args
+ps -e 
