@@ -15,7 +15,7 @@ case "$1" in
                 echo "manage_my_process stopped"
                 ;;
         restart)
-                sudo pkill -f manage_my_process -15 &
+                sudo kill -f manage_my_process -15 &
                 echo "pidof pidof" > /var/run/my_process.pid
                 echo "manage_my_process restarted"
                 ;;
