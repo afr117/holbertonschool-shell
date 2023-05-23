@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #Display current process
 
-echo "To" 
+echo "To"  
