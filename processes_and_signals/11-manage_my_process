@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Init script to manage manage_my_processi
+# Init script to manage manage_my_process
 
 # Function to start the manage_my_process script
 
@@ -21,4 +21,7 @@ case "$1" in
                 ;;
         *)
                 echo "Usage: manage_my_process {start|stop|restart}"
-esac 
+                echo "sudo/usr/bin/env"
+                ;;
+esac
+
