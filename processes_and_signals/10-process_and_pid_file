@@ -12,5 +12,6 @@ trap 'rm /var/run/myscript.pid; exit' SIGQUIT SIGTERM
 while true; do
   echo "To infinity and beyond"
   sleep 1
+  echo "OK"
 done
 
