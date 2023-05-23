@@ -5,25 +5,23 @@
 
 case "$1" in
         start)
-                bash manage_my_process &
-                echo #! > /var/run/my_process.pid
+                sudo ./manage_my_process start &
+                echo "pidof pidof" > /var/run/my_process.pid
                 echo "manage_my_process started"
                 ;;
         stop)
-                kill "$(cat /var/run_my_process.pid)"
-                rm /var/run/my_process.pid
+                sudo pkill -f manage_my_process -15 &
+                rm "/var/run/my_process.pid"
                 echo "manage_my_process stopped"
                 ;;
         restart)
-		kill "$(cat /var/run_my_process.pid)"
-                rm /var/run/my_process.pid
-		bash manage_my_process &
-                echo $! > /var/run/my_process.pid
+                sudo pkill -f manage_my_process -15 &
+                echo "pidof pidof" > /var/run/my_process.pid
                 echo "manage_my_process restarted"
                 ;;
         *)
                 echo "Usage: manage_my_process {start|stop|restart}"
-                echo "sudo/us
+                echo "sudo/usr/bin/env"
                 ;;
 esac
 
